@@ -4,6 +4,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def home(request):
-    return render(request,"index.html")
+   peoples=[
+    {'name':'shariyar shafi','age':24},
+    {'name': 'rashedul islam','age':26},
+    {'name': 'pk taskin','age':28}
+   ]
+   return render(request,"index.html",context={'peoples':peoples})
 def success_page(request):
     return HttpResponse(" <h1>Hey this is a success page </h1>")

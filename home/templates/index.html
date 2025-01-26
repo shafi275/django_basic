@@ -5,12 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-     {
-       
-     }
+        table, th, td {
+            border: 1px solid black;
+        }
     </style>
 </head>
 <body>
-   <h1> hey this is shariyar shafi.... tryin to learn django.....</h1>
+   <h1>Hey, this is Shariyar Shafi, trying to learn Django...</h1>
+   <table>
+       <tr>
+           <th>Name</th>
+           <th>Age</th>
+           <th>Vote</th>
+       </tr>
+       {% for person in peoples %}
+       <tr>
+           <td>{{ person.name }}</td>
+           <td>{{ person.age }}</td>
+           <td>
+               {% if person.age >= 18 %}
+                   Yes
+               {% else %}
+                   No
+               {% endif %}
+           </td>
+       </tr>
+       {% endfor %}
+   </table>
 </body>
 </html>
